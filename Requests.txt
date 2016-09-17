@@ -1,1 +1,0 @@
-{"Data": "Sat Sep 17 03:32:09 BRT 2016" , "IP": "0:0:0:0:0:0:0:1" , "Device": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36" , "Protocolo": "HTTP/1.1" , "Metodo": "GET" , "Parametro": "11222333000181" , "Resposta": "true"}]
