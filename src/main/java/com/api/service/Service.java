@@ -1,4 +1,4 @@
-package com.api;
+package com.api.service;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,6 +12,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+
+import com.api.model.Request;
 
 public class Service {
 	private EntityManagerFactory emf;

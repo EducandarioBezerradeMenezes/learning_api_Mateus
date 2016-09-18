@@ -1,4 +1,4 @@
-package com.api;
+package com.api.model;
 
 import java.sql.Date;
 

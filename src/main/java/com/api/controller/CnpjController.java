@@ -1,11 +1,14 @@
-package com.api;
+package com.api.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import com.api.model.Cnpj;
+import com.api.model.Request;
+import com.api.service.Service;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -33,10 +36,4 @@ public class CnpjController {
         return new ResponseEntity<Cnpj>(cnpj,HttpStatus.OK);
     }
     
-    @RequestMapping(value = "/Requests", method=RequestMethod.GET)
-    public ResponseEntity<List<Request>> requestHistory() {
-    	Service service = new Service();
-    	
-        return new ResponseEntity<List<Request>>(service.getRequests(),HttpStatus.OK);
-    }
 }
