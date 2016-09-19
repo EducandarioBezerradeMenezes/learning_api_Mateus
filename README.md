@@ -21,18 +21,18 @@ No desenvolvimento desta aplicação foi criada uma classe JavaApiApplication qu
     •  CNPJ – armazena uma String contendo um CNPJ e o valida;
     
     •  Request – guarda informações que envolvem uma requisição http (Data, IP, Dispositivo, Protocolo, Método,
-       Parâmetro e Resposta);
+       Parâmetro e Resposta).
 
   •	Services:
 
     •	ServiceRequestDb – armazena as informações de objetos Request em uma base de dados Postgresql;
     
-    •	ServiceRequestFile – armazena as informações de objetos Request em um arquivo chamado Request.txt;
+    •	ServiceRequestFile – armazena as informações de objetos Request em um arquivo chamado Request.txt.
 
   •	Controllers:
 
     •	ControllerCnpj – direciona requisições http envolvendo CNPJ para seus devidos métodos e as armazena na 
-      base de dados utilizando um objeto Service.
+      base de dados utilizando um objeto Service;
     
     •	ControllerRequest – redireciona requisições http envolvendo o histórico de requisições (retorna o historico
       de requisições).
