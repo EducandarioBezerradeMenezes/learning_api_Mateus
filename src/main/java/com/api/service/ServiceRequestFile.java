@@ -6,25 +6,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 
 import com.api.model.Request;
 
-public class Service {
-	private EntityManagerFactory emf;
+public class ServiceRequestFile {
+
 	File file;
 	
-	public Service(){
-		emf = Persistence.createEntityManagerFactory("JavaApi");
-	}
-
-	public Service(String name){
-		file = new File(name + ".txt");
+	public ServiceRequestFile(){
+		file = new File("Request.txt");
 		try{
 			if (!file.exists()) {
 				file.createNewFile();
@@ -32,28 +22,7 @@ public class Service {
 		}catch(IOException e){}
 	}
 	
-	public int storeRequestDB(Request request){
-		EntityManager em = emf.createEntityManager();
-		
-		em.getTransaction().begin();
-		em.persist(request);
-		em.getTransaction().commit();
-		em.close();
-		
-		return 0;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Request> getRequests(){
-		EntityManager em = emf.createEntityManager();
-		
-		Query query = em.createQuery("SELECT r FROM Request r");
-		List<Request> requests = query.getResultList();
-		
-		return requests;
-	}
-	
-	public int storeRequestFile(Request request){
+	public int persistRequest(Request request){
 		try {
 
 			String register = ("{\"Data\": \"" + request.getDate() + "\" ,"
@@ -81,7 +50,7 @@ public class Service {
 
 		return 0;
 	}
-	public String getRequestsFile(){
+	public String getRequests(){
 		String info = "";
 		try{
 			BufferedReader br = new BufferedReader(new FileReader(file));
